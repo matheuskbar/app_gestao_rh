@@ -6,7 +6,14 @@
   <h2>Lista de Funcionários</h2>
   <ul>
     {% for funcionario in object_list %}
-      <li>{{ funcionario }}</li>
+      <li>
+        <a href="{% url 'funcionarios:editar_funcionario' funcionario.id %}">
+          {{ funcionario }}
+        </a>
+        <a href="{% url 'funcionarios:deletar_funcionario' funcionario.id %}" class="btn btn-danger">
+          Deletar
+        </a>
+      </li>
     {% empty %}
       Não há funcionários para listar
     {% endfor %}
