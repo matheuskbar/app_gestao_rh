@@ -4,6 +4,11 @@
 
 {% block main %}
     <h1>Seja Bem Vindo! {{ usuario.funcionario.nome }}</h1>
+    <div>
+        <a href="{% url 'funcionarios:listar_funcionarios' %}" class="btn btn-primary">
+            Gerenciar Funcionários
+        </a>
+    </div>
     {% if usuario.funcionario.empresa %}
         <h5>Trabalha em: {{ usuario.funcionario.empresa }}</h5>
         <a href="{% url 'empresas:editar_empresa' usuario.funcionario.empresa.pk  %}" class="btn btn-info">

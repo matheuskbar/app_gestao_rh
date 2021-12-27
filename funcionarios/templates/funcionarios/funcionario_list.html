@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} Funcionários {% endblock %}
+
+{% block main %}
+  <h2>Lista de Funcionários</h2>
+  <ul>
+    {% for funcionario in object_list %}
+      <li>{{ funcionario }}</li>
+    {% empty %}
+      Não há funcionários para listar
+    {% endfor %}
+  </ul>
+
+{% endblock %}
