@@ -18,5 +18,10 @@
       Não há funcionários para listar
     {% endfor %}
   </ul>
+  <div>
+    <a href="{% url 'funcionarios:criar_funcionario' %}" class="btn btn-success">
+      Novo Funcionário
+    </a>
+  </div>
 
 {% endblock %}
